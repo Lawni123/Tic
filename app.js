@@ -50,6 +50,7 @@ boxes.forEach( (box)=>{
         }
         box.disabled=true;
         checkWinner();
+        autoReset();
     })
 });
 
@@ -65,3 +66,17 @@ for(let pattern of winPattern){
     }
 }
 };
+let autoReset=()=>{
+    let isEmpty;
+    for(let box of boxes){
+        if(box.innerText===""){
+            isEmpty=true;
+            break;
+        }else{
+            isEmpty=false;
+        }
+    }
+    if(isEmpty===false){
+        resetGame();
+    }
+}
